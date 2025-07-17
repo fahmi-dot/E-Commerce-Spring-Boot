@@ -1,7 +1,8 @@
 package com.fahmi.ecommerce.repository;
 
 import com.fahmi.ecommerce.constant.UserRole;
-import com.fahmi.ecommerce.model.entity.Role;
+import com.fahmi.ecommerce.entity.Role;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

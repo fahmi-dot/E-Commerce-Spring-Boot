@@ -1,5 +1,6 @@
 package com.fahmi.ecommerce.util;
 
+import com.fahmi.ecommerce.security.JwtUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

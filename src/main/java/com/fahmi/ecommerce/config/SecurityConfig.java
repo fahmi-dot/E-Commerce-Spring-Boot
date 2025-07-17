@@ -1,11 +1,10 @@
 package com.fahmi.ecommerce.config;
 
 import com.fahmi.ecommerce.constant.Endpoint;
-import com.fahmi.ecommerce.util.JwtAuthFilter;
+import com.fahmi.ecommerce.security.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -30,8 +29,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequest -> {
                     authorizeRequest
                             .requestMatchers(Endpoint.AUTH + "/**").permitAll()
+                            .requestMatchers(Endpoint.PUBLIC + "/**").permitAll()
+                            .requestMatchers(Endpoint.USER + "/**").hasAnyRole("ADMIN", "CUSTOMER", "PARTNER")
+                            .requestMatchers(Endpoint.ADMIN + "/**").hasRole("ADMIN")
                             .requestMatchers(Endpoint.CUSTOMER + "/**").hasRole("CUSTOMER")
-                            .requestMatchers(Endpoint.SELLER + "/**").hasRole("SELLER")
+                            .requestMatchers(Endpoint.PARTNER + "/**").hasRole("PARTNER")
                             .anyRequest().authenticated();
                 })
                 .authenticationProvider(AuthenticationProvider())

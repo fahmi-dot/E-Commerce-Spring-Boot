@@ -1,8 +1,9 @@
 package com.fahmi.ecommerce.util;
 
-import com.fahmi.ecommerce.model.dto.response.other.CommonResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import com.fahmi.ecommerce.dto.response.other.CommonResponse;
 
 public class ResponseUtil {
     public static <T>ResponseEntity<CommonResponse<T>> response(HttpStatus status, String message, T data) {

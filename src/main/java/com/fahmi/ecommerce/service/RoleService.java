@@ -1,32 +1,13 @@
 package com.fahmi.ecommerce.service;
 
 import com.fahmi.ecommerce.constant.UserRole;
-import com.fahmi.ecommerce.model.entity.Role;
-import com.fahmi.ecommerce.repository.RoleRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
+import com.fahmi.ecommerce.entity.Role;
 import java.util.Optional;
 
-@RequiredArgsConstructor
-@Service
-public class RoleService {
-    private final RoleRepository roleRepository;
+public interface RoleService {
+    Optional<Role> findByName(UserRole roleName);
 
-    public Optional<Role> findByName(UserRole roleName) {
-        return roleRepository.findByName(roleName);
-    }
+    Role save(Role role);
 
-    public Role save(Role role) {
-        return roleRepository.save(role);
-    }
-
-    public Role getOrCreate(UserRole roleName) {
-        return findByName(roleName)
-                .orElseGet(() -> {
-                    Role role = new Role();
-                    role.setName(roleName);
-                    return save(role);
-                });
-    }
+    Role getOrCreate(UserRole roleName);
 }

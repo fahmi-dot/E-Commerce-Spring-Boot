@@ -1,4 +1,4 @@
-package com.fahmi.ecommerce.model.dto.response;
+package com.fahmi.ecommerce.dto.response;
 
 import lombok.Builder;
 import lombok.Data;

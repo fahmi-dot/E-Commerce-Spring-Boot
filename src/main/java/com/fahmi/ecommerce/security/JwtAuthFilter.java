@@ -1,4 +1,4 @@
-package com.fahmi.ecommerce.util;
+package com.fahmi.ecommerce.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

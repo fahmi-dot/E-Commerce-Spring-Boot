@@ -1,4 +1,4 @@
-package com.fahmi.ecommerce.service;
+package com.fahmi.ecommerce.service.impl;
 
 import com.fahmi.ecommerce.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -7,9 +7,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
 @Service
-public class UserDetailService implements UserDetailsService {
+@RequiredArgsConstructor
+public class UserDetailServiceImpl implements UserDetailsService {
     private final UserRepository userRepository;
 
     @Override

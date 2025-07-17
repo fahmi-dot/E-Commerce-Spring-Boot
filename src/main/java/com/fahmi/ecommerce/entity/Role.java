@@ -1,4 +1,4 @@
-package com.fahmi.ecommerce.model.entity;
+package com.fahmi.ecommerce.entity;
 
 import com.fahmi.ecommerce.constant.UserRole;
 import jakarta.persistence.*;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "m_role")
+@Table(name = "mst_role")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
